@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/login/page";
-
+import Auth from "./pages/login/page";
+import "./pages/common/styles/utilities.css";
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Login />} path="/login" />
+        <Route element={<Auth />} path="/login" />
 
         {/* 404 */}
         <Route
