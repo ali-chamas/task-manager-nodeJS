@@ -115,7 +115,7 @@ const moveTask = async (req, res) => {
         .json({ success: false, message: "New column not found" });
     }
 
-    res.status(200).json({ success: true, task });
+    res.status(200).json({ success: "updated", task });
   } catch (error) {
     console.error(error);
     res.status(500).json({

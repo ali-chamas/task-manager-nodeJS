@@ -16,7 +16,7 @@ const Home = () => {
     const data = res.data;
     setBoards(data.boards);
   };
-
+  console.log(user);
   useEffect(() => {
     getBoards();
   }, [triggerState]);
