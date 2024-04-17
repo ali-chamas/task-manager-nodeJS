@@ -35,6 +35,7 @@ const login = async (req, res) => {
     return res.send(500).send("Internal server error!");
   }
 };
+
 const logout = async (req, res) => {
   try {
     res.clearCookie("jwtToken");

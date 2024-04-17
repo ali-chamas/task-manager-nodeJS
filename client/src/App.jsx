@@ -6,6 +6,7 @@ import Home from "./pages/home/page";
 import AuthProtection from "./protectedRoutes/AuthRoutes";
 import LoginProtection from "./protectedRoutes/LoginRoutes";
 import Layout from "./pages/common/components/Layout";
+import SingleBoard from "./pages/single-board/page";
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,6 +17,10 @@ const App = () => {
 
         <Route element={<AuthProtection />}>
           <Route element={<Layout children={<Home />} />} path="/" />
+          <Route
+            element={<Layout children={<SingleBoard />} />}
+            path="/board/:board_id"
+          />
         </Route>
 
         {/* 404 */}

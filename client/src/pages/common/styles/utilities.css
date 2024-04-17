@@ -3,9 +3,13 @@
 }
 
 .btn-style {
-  @apply px-5 py-3 rounded-lg font-bold;
+  @apply px-5 py-2 rounded-lg font-bold;
 }
 
 .bg-primary {
   @apply bg-gradient-to-tr from-purple-500  to-fuchsia-600 hover:opacity-80;
+}
+
+.popup-container {
+  @apply flex h-screen w-screen fixed top-0 left-0 bg-black/20 backdrop-blur-sm backdrop-filter justify-center items-center;
 }
