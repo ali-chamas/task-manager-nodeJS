@@ -8,6 +8,7 @@ const SingleBoard = () => {
   const navigate = useNavigate();
 
   const [columns, setColumns] = useState([]);
+  const [trigger, setTrigger] = useState(false);
 
   const deleteBoard = async () => {
     const res = await sendRequest("DELETE", `/boards/delete`, {
@@ -25,7 +26,7 @@ const SingleBoard = () => {
 
   useEffect(() => {
     getColumns();
-  }, []);
+  }, [trigger]);
   return (
     <div className="flex flex-col relative p-10 gap-10">
       <button className="btn-style bg-red-500 self-end " onClick={deleteBoard}>
@@ -33,7 +34,9 @@ const SingleBoard = () => {
       </button>
       <div className="flex flex-wrap gap-5">
         {columns.length > 0 &&
-          columns.map((column, i) => <ColumnCard column={column} key={i} />)}
+          columns.map((column, i) => (
+            <ColumnCard column={column} setTrigger={setTrigger} key={i} />
+          ))}
       </div>
     </div>
   );
