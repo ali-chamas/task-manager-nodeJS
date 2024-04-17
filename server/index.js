@@ -5,8 +5,10 @@ const boardRouter = require("./routes/board.routes");
 const columnRouter = require("./routes/column.routes");
 const taskRouter = require("./routes/task.routes");
 const categoryRouter = require("./routes/category.routes");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 require("dotenv").config();
 const PORT = process.env.PORT;
